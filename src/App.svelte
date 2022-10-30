@@ -14,7 +14,17 @@
     seconds: "s" | "";
   };
   const arrive: number = Date.UTC(2022, 11, 17, 5, 55, 0);
-  const emojies: string[] = ["😊", "😘", "🤗", "🥰", "😎", "🥳", "😋", "🤣"];
+  const emojies: string[] = [
+    "😊",
+    "😘",
+    "🤗",
+    "🥰",
+    "😎",
+    "🥳",
+    "😋",
+    "🤣",
+    "💗",
+  ];
 
   let now: number = Date.now();
   let index: number = 0;
@@ -58,7 +68,7 @@
     {#if tap}
       How Long Now?
     {:else}
-      I love you Steph ❤️!
+      I ❤️ you Stephanie!
     {/if}
   </h1>
   <div class="ticktick">
