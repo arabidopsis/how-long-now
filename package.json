@@ -1,0 +1,27 @@
+{
+  "name": "how-long-now",
+  "version": "0.1.0",
+  "description": "how long until I arrive",
+  "author": "ian castleden",
+  "license": "ISC",
+  "main": "src/main.ts",
+  "scripts": {
+    "serve": "npx live-server --mount=/assets:assets index.html",
+    "build": "node svelte-build/build.main.mjs",
+    "production": "PRODUCTION=1 node svelte-build/build.main.mjs",
+    "build-watch": "WATCH=1 node svelte-build/build.main.mjs",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@tsconfig/svelte": "^3.0.0",
+    "@types/bootstrap": "^5.2.5",
+    "dotenv": "^16.0.2",
+    "esbuild": "^0.15.7",
+    "esbuild-svelte": "^0.7.1",
+    "nunjucks": "^3.2.3",
+    "svelte": "^3.50.1",
+    "svelte-check": "^2.9.0",
+    "svelte-preprocess": "^4.10.7",
+    "typescript": "^4.8.3"
+  }
+}
