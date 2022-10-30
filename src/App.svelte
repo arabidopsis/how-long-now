@@ -55,10 +55,11 @@
 <div class="how-long-now">
   <h1>How Long Now?</h1>
   <div class="ticktick">
-    <b>{togo.days}</b> day{s.days} <b>{togo.hours}</b> hour{s.hours}
-    <b>{togo.minutes}</b>
-    minute{s.minutes} and <b>{togo.seconds}</b>
-    second{s.seconds}
+    <b>{togo.days}</b> day{s.days}
+    <b>{togo.hours}</b> hour{s.hours}
+    <b>{togo.minutes}</b> minute{s.minutes}
+    and
+    <b>{togo.seconds}</b> second{s.seconds}
   </div>
   <div class="wrapper" style:height="{emoji_size + 1.5}em">
     {#key emoji}
