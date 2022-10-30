@@ -8,7 +8,7 @@
 
 node_modules/
 .vscode/settings.json
-public/main.*
+public/assets/
 .~lock.*#
 # remove these if you want
 package-lock.json
