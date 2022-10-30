@@ -18,6 +18,7 @@
 
   let now: number = Date.now();
   let index: number = 0;
+  export let emoji_size = 3;
 
   $: togo = elapsed(now);
   $: s = plural(togo);
@@ -59,9 +60,11 @@
     minute{s.minutes} and <b>{togo.seconds}</b>
     second{s.seconds}
   </div>
-  <div class="wrapper">
+  <div class="wrapper" style:height="{emoji_size + 1.5}em">
     {#key emoji}
-      <div class="emoji" transition:fade>{emoji}</div>
+      <div class="emoji" style:font-size="{emoji_size}em" transition:fade>
+        {emoji}
+      </div>
     {/key}
   </div>
 </div>
@@ -90,11 +93,9 @@
   }
   .wrapper {
     padding: 0.5em;
-    height: 4.5em;
     position: relative;
   }
   .emoji {
-    font-size: 3em;
     position: absolute;
     top: 50%;
     left: 50%;

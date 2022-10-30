@@ -6,7 +6,7 @@
   "license": "ISC",
   "main": "src/main.ts",
   "scripts": {
-    "serve": "npx live-server --mount=/assets:assets index.html",
+    "serve": "npx live-server --mount=/:assets assets/index.html",
     "build": "node svelte-build/build.main.mjs",
     "production": "PRODUCTION=1 node svelte-build/build.main.mjs",
     "build-watch": "WATCH=1 node svelte-build/build.main.mjs",
