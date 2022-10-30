@@ -20,8 +20,13 @@ pnpm run production
 ## `nginx`
 
 edit `root /var/www/how-long-now/public;` of `etc/howlongnow.conf`.
+Also change `server_name howlongnow.plantenergy.org;`
+if you like.
+
 
 ```bash
 sudo cp etc/howlongnow.conf /etc/nginx/sites-enabled/
 sudo systemctl restart nginx
 ```
+
+(or copy into `/etc/nginx/conf.d/` for RHEL)
