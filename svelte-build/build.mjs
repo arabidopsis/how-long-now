@@ -17,8 +17,7 @@ const baseconfig = {
   minify: production,
   target: 'es6',
   plugins: [sveltePlugin({ preprocess: sveltePreprocess() })],
-  logLevel: "info",
-  external: ['nunjucks', 'bootstrap']
+  logLevel: "info"
 }
 async function build(config) {
   return esbuild.build({ ...baseconfig, ...config })//.catch(() => process.exit(1))
