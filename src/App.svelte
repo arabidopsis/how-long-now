@@ -19,6 +19,7 @@
   let now: number = Date.now();
   let index: number = 0;
   export let emoji_size = 3;
+  let tap = true;
 
   $: togo = elapsed(now);
   $: s = plural(togo);
@@ -53,7 +54,13 @@
 </script>
 
 <div class="how-long-now">
-  <h1>How Long Now?</h1>
+  <h1 on:touchstart={() => (tap = !tap)}>
+    {#if tap}
+      How Long Now?
+    {:else}
+      I love you Steph ❤️!
+    {/if}
+  </h1>
   <div class="ticktick">
     <b>{togo.days}</b> day{s.days}
     <b>{togo.hours}</b> hour{s.hours}
