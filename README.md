@@ -5,7 +5,9 @@
 Install `nodejs`, `pnpm` etc.
 
 ```bash
+# nvm
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+# pnpm
 wget -qO- https://get.pnpm.io/install.sh | sh -
 source ~/.bashrc
 nvm use --lts # use latest long term version of npm, node
