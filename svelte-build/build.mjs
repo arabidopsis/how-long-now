@@ -4,8 +4,7 @@ import sveltePreprocess from "svelte-preprocess";
 import dotenv from 'dotenv'
 dotenv.config({ path: '.env' })
 
-const watch = process.env.WATCH === '1';
-const production = process.env.PRODUCTION === '1';
+const production = process.env.NODE_ENV === 'production';
 const baseconfig = {
   mainFields: ["svelte", "browser", "module", "main"],
   loader: { '.svg': 'dataurl' },
@@ -13,7 +12,7 @@ const baseconfig = {
   bundle: true,
   charset: 'utf8',
   sourcemap: true,
-  watch: watch,
+  watch: process.argv.includes('--watch'),
   minify: production,
   target: 'es6',
   plugins: [sveltePlugin({ preprocess: sveltePreprocess() })],
