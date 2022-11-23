@@ -1,6 +1,7 @@
 <script type="ts">
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
+  import Confetti from "./Confetti.svelte";
   type ToGo = {
     days: number;
     hours: number;
@@ -30,13 +31,16 @@
   let index: number = 0;
   export let emoji_size = 3;
   let tap = true;
-
-  $: togo = elapsed(now);
+  $: secstogo = secs(now);
+  $: togo = elapsed(now, secstogo);
   $: s = plural(togo);
   $: emoji = emojies[index];
 
-  function elapsed(now: number): ToGo {
-    let togo = Math.round((arrive - now) / 1000);
+  function secs(now: number): number {
+    return Math.round((arrive - now) / 1000);
+  }
+
+  function elapsed(now: number, togo: number): ToGo {
     const days = Math.floor(togo / (24 * 60 * 60));
     togo -= days * (24 * 60 * 60);
     const hours = Math.floor(togo / (60 * 60));
@@ -66,25 +70,29 @@
 <div class="how-long-now">
   <h1 on:touchstart={() => (tap = !tap)}>
     {#if tap}
-      How Long Now?
+      {#if secstogo >= 0}How Long Now?{:else}Hello Gorgeous!{/if}
     {:else}
       I ❤️ you Stephanie!
     {/if}
   </h1>
-  <div class="ticktick">
-    <b>{togo.days}</b> day{s.days}
-    <b>{togo.hours}</b> hour{s.hours}
-    <b>{togo.minutes}</b> minute{s.minutes}
-    and
-    <b>{togo.seconds}</b> second{s.seconds}
-  </div>
-  <div class="wrapper" style:height="{emoji_size + 1.5}em">
-    {#key emoji}
-      <div class="emoji" style:font-size="{emoji_size}em" transition:fade>
-        {emoji}
-      </div>
-    {/key}
-  </div>
+  {#if secstogo >= 0}
+    <div class="ticktick">
+      <b>{togo.days}</b> day{s.days}
+      <b>{togo.hours}</b> hour{s.hours}
+      <b>{togo.minutes}</b> minute{s.minutes}
+      and
+      <b>{togo.seconds}</b> second{s.seconds}
+    </div>
+    <div class="wrapper" style:height="{emoji_size + 1.5}em">
+      {#key emoji}
+        <div class="emoji" style:font-size="{emoji_size}em" transition:fade>
+          {emoji}
+        </div>
+      {/key}
+    </div>
+  {:else}
+    <Confetti />
+  {/if}
 </div>
 
 <style>
