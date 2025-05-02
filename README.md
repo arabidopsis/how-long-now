@@ -5,8 +5,8 @@
 Install `nodejs`, `pnpm` etc.
 
 ```bash
-# nvm
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+# nvm https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 # pnpm
 wget -qO- https://get.pnpm.io/install.sh | sh -
 source ~/.bashrc
@@ -28,7 +28,8 @@ if you like.
 
 ```bash
 sudo cp etc/howlongnow.conf /etc/nginx/sites-enabled/
+# OR for ubuntu
+sudo cp etc/howlongnow.conf /etc/nginx/conf.d/
 sudo systemctl restart nginx
 ```
 
-(or copy into `/etc/nginx/conf.d/` for RHEL)

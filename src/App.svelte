@@ -14,17 +14,17 @@
     minutes: "s" | "";
     seconds: "s" | "";
   };
-  const arrive: number = Date.UTC(2022, 11, 17, 5, 55, 0);
+  const arrive: number = Date.UTC(2025, 7, 4, 17-8, 0, 0);
   const emojies: string[] = [
     "😊",
-    "😘",
     "🤗",
-    "🥰",
     "😎",
     "🥳",
+    "😹",
     "😋",
     "🤣",
-    "💗",
+    "😺",
+  
   ];
 
   let now: number = Date.now();
@@ -70,9 +70,9 @@
 <div class="how-long-now">
   <h1 on:touchstart={() => (tap = !tap)}>
     {#if tap}
-      {#if secstogo >= 0}How Long Now?{:else}Hello Gorgeous!{/if}
+      {#if secstogo >= 0}How Long To Go?{:else}Retired!{/if}
     {:else}
-      I ❤️ you Stephanie!
+      We ❤️ you Rosie!
     {/if}
   </h1>
   {#if secstogo >= 0}
