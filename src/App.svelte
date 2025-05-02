@@ -14,7 +14,8 @@
     minutes: "s" | "";
     seconds: "s" | "";
   };
-  const arrive: number = Date.UTC(2025, 7, 4, 17-8, 0, 0);
+  // month is monthIndex 0-11 # who did this?
+  const arrive: number = Date.UTC(2025, 6, 4, 17-8, 0, 0);
   const emojies: string[] = [
     "😊",
     "🤗",
@@ -24,7 +25,6 @@
     "😋",
     "🤣",
     "😺",
-  
   ];
 
   let now: number = Date.now();

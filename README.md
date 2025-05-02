@@ -33,3 +33,9 @@ sudo cp etc/howlongnow.conf /etc/nginx/conf.d/
 sudo systemctl restart nginx
 ```
 
+Or just copy it accross
+
+```bash
+pnpm run production
+rsync -av public viridis:/var/www/websites/how-long-now
+```
