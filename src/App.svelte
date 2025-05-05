@@ -19,12 +19,19 @@
   const emojies: string[] = [
     "😊",
     "🤗",
+    "😿",
     "😎",
+    "😽",
+    "🎊",
     "🥳",
     "😹",
     "😋",
     "🤣",
+    "🎁",
     "😺",
+    "🎂",
+    "🍾",
+    "🥂"
   ];
 
   let now: number = Date.now();
@@ -35,6 +42,7 @@
   $: togo = elapsed(now, secstogo);
   $: s = plural(togo);
   $: emoji = emojies[index];
+  let cat = './img/cat1.jpg'
 
   function secs(now: number): number {
     return Math.round((arrive - now) / 1000);
@@ -59,6 +67,7 @@
   }
 
   onMount(() => {
+    document.body.style.backgroundImage = cat;
     const i = setInterval(() => {
       now = Date.now();
       index = (index + 1) % emojies.length;
@@ -100,7 +109,7 @@
     margin: 0 auto;
     width: 80%;
 
-    border: thick double white;
+    border: thick double pink;
     padding: 1em;
     text-align: center;
     display: flex;
@@ -109,7 +118,7 @@
   }
 
   .ticktick {
-    border: solid white 1px;
+    border: solid pink 1px;
     width: 80%;
     margin: 0 auto;
     padding: 1em;
