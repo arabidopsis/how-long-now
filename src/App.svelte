@@ -42,7 +42,7 @@
   $: togo = elapsed(now, secstogo);
   $: s = plural(togo);
   $: emoji = emojies[index];
-  let cat = './img/cat1.jpg'
+  // let cat = './img/cat1.jpg'
 
   function secs(now: number): number {
     return Math.round((arrive - now) / 1000);
@@ -67,7 +67,7 @@
   }
 
   onMount(() => {
-    document.body.style.backgroundImage = cat;
+    // document.body.style.backgroundImage = cat;
     const i = setInterval(() => {
       now = Date.now();
       index = (index + 1) % emojies.length;
