@@ -81,7 +81,7 @@
     {#if tap}
       {#if secstogo >= 0}How Long To Go?{:else}Retired!{/if}
     {:else}
-      We ❤️ you Rosie!
+      Goodbye :(
     {/if}
   </h1>
   {#if secstogo >= 0}
